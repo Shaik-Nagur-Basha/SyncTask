@@ -14,6 +14,7 @@ import {
   Moon,
   Search,
 } from "lucide-react";
+import { ProgressCircle } from "./components/ProgressCircle";
 import {
   PieChart,
   Pie,
@@ -135,7 +136,7 @@ function useLocalState(key, initial) {
 export default function App() {
   const [tasks, setTasks] = useLocalState("tasks-v2", DEFAULT_TASKS);
   const [expanded, setExpanded] = useState(null);
-  const [showAnalytics, setShowAnalytics] = useState(true);
+  const [showAnalytics, setShowAnalytics] = useState(false);
   const [themeDark, setThemeDark] = useLocalState("theme-dark", true);
   const [query, setQuery] = useState("");
   const [date, setDate] = useLocalState(
@@ -208,7 +209,7 @@ export default function App() {
     );
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden transition-colors duration-500 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-[#0b0f15] dark:to-[#0d1117] text-gray-800 dark:text-gray-200">
+    <div className="h-screen w-full transition-colors duration-500 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-[#0b0f15] dark:to-[#0d1117] text-gray-800 dark:text-gray-200 flex flex-col">
       {/* Animated background blobs */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -223,64 +224,69 @@ export default function App() {
         />
       </div>
 
-      <div className="mx-auto max-w-5xl px-4 py-8">
+      <div className="container mx-auto h-screen  flex flex-col">
         {/* Header */}
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <Glass className="px-4 py-3 flex items-center gap-3">
-            <Calendar className="h-5 w-5" />
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="bg-transparent outline-none text-sm dark:text-gray-200 text-gray-800"
-            />
-          </Glass>
+        <div className="h-[10vh] p-2 flex items-center justify-between w-[100%] mx-auto">
+          {/* Left side - Analytics */}
+          <button
+            onClick={() => setShowAnalytics((s) => !s)}
+            className="p-3 hover:bg-white/5 rounded-2xl backdrop-blur-md hover:shadow-lg active:scale-95 transition flex items-center justify-center"
+            title="Toggle analytics"
+          >
+            <BarChart3 className="h-6 w-6" />
+          </button>
 
-          <Glass className="flex-1 px-4 py-3 flex items-center gap-3 min-w-[220px]">
-            <Search className="h-5 w-5" />
-            <input
-              placeholder="Search tasks, categories, notes…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="bg-transparent outline-none w-full dark:text-gray-200 text-gray-800"
-            />
-          </Glass>
-
-          <Glass className="px-3 py-3 flex items-center gap-3">
-            <button
-              className="relative inline-flex items-center gap-2 px-3 py-2 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg active:scale-95 transition"
-              onClick={() => setShowAnalytics((s) => !s)}
-              title="Toggle analytics"
-            >
-              <BarChart3 className="h-5 w-5" />
-              <span className="text-sm">Analytics</span>
-            </button>
-            <button
+          {/* Center - Title */}
+          <motion.div
+            className="flex-1 text-center px-8 cursor-pointer"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1
+              className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 tracking-tight"
               onClick={() => setThemeDark((v) => !v)}
-              className="ml-2 p-2 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg active:scale-95 transition"
-              title="Toggle theme"
             >
-              {themeDark ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </button>
-            <button
-              className="ml-1 p-2 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md hover:shadow-lg active:scale-95 transition"
-              title="Settings"
-            >
-              <Settings className="h-5 w-5" />
-            </button>
-          </Glass>
+              SyncTask
+            </h1>
+          </motion.div>
+
+          {/* Right side - Progress and Time */}
+          <div className="flex items-center gap-3 py-3 rounded-2xl backdrop-blur-md transition-all">
+            <div className="text-right truncate">
+              <div className="text-[10px] font-medium tracking-tight">
+                {new Date().toLocaleTimeString([], {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: true,
+                })}
+              </div>
+              <div className="text-[11px] opacity-70">
+                {new Date().toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+              </div>
+            </div>
+            <div className="relative">
+              <ProgressCircle
+                progress={(stats.completed / stats.total) * 100}
+              />
+              <div className="absolute inset-0 flex items-center justify-center text-xs font-medium">
+                {Math.round((stats.completed / stats.total) * 100)}%
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Main layout */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="mx-2 mb-2 grid lg:grid-cols-3 gap-6">
           {/* Phone-like stack */}
           <div className="lg:col-span-2">
-            <Glass className="p-4">
-              <div className="flex items-center justify-between px-2 pb-3">
+            <Glass className="p-2 h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden">
+              {/* <div className="flex items-center justify-between px-2 pb-3">
                 <div className="text-lg font-semibold">Daily Timeline</div>
                 <div className="text-xs opacity-80 flex items-center gap-2">
                   <Clock className="h-4 w-4" />
@@ -289,7 +295,7 @@ export default function App() {
                     minute: "2-digit",
                   })}
                 </div>
-              </div>
+              </div> */}
 
               <Reorder.Group
                 axis="y"
@@ -317,7 +323,7 @@ export default function App() {
                 ))}
               </Reorder.Group>
 
-              <div className="mt-4 flex items-center justify-between">
+              {/* <div className="mt-4 flex items-center justify-between">
                 <button
                   onClick={addTask}
                   className="group inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md transition hover:shadow-xl active:scale-95"
@@ -328,20 +334,27 @@ export default function App() {
                 <div className="text-sm opacity-80">
                   {stats.completed}/{stats.total} completed
                 </div>
-              </div>
+              </div> */}
             </Glass>
           </div>
 
-          {/* Analytics */}
+          {/* Analytics Popup */}
           <AnimatePresence>
             {showAnalytics && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.35 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm"
+                onClick={() => setShowAnalytics(false)}
               >
-                <AnalyticsPanel pieData={pieData} barData={barData} />
+                <motion.div
+                  className="w-[90%] max-w-lg m-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <AnalyticsPanel pieData={pieData} barData={barData} />
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
