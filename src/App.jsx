@@ -4,39 +4,18 @@ import {
   CheckCircle2,
   Circle,
   ChevronDown,
-  Settings,
-  Calendar,
+  // Settings,
+  // Calendar,
   BarChart3,
-  Plus,
-  Clock,
+  // Plus,
+  // Clock,
   Trash2,
-  Sun,
-  Moon,
-  Search,
+  // Sun,
+  // Moon,
+  // Search,
 } from "lucide-react";
 import { ProgressCircle } from "./components/ProgressCircle";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Tooltip,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from "recharts";
-
-/**
- * DAILY TASKS – GLASS UI (Single-file React Component)
- * - TailwindCSS classes are used for styling (glassmorphism, shadows, blur)
- * - Framer Motion for animations/transitions and drag-reorder
- * - Recharts for quick analytics
- *
- * Tip: In ChatGPT's preview this runs as-is. If you copy to your project,
- * ensure Tailwind is enabled and framer-motion + recharts + lucide-react are installed.
- */
+import AnalyticsPanel from "./components/AnalyticsPanel";
 
 const DEFAULT_TASKS = [
   {
@@ -161,29 +140,7 @@ export default function App() {
   const stats = useMemo(() => {
     const total = tasks.length;
     const completed = tasks.filter((t) => t.done).length;
-    const byCat = tasks.reduce((a, t) => {
-      a[t.category] = (a[t.category] || 0) + (t.done ? 1 : 0);
-      return a;
-    }, {});
-    return { total, completed, byCat };
-  }, [tasks]);
-
-  const pieData = useMemo(() => {
-    const cats = Object.keys(CATEGORY_COLORS);
-    return cats
-      .map((c) => ({ name: c, value: stats.byCat[c] || 0 }))
-      .filter((x) => x.value > 0);
-  }, [stats]);
-
-  const barData = useMemo(() => {
-    const groups = tasks.reduce((acc, t) => {
-      const key = t.category;
-      acc[key] = acc[key] || { category: key, Done: 0, Planned: 0 };
-      acc[key].Planned += 1;
-      if (t.done) acc[key].Done += 1;
-      return acc;
-    }, {});
-    return Object.values(groups);
+    return { total, completed };
   }, [tasks]);
 
   const addTask = () => {
@@ -286,17 +243,6 @@ export default function App() {
           {/* Phone-like stack */}
           <div className="lg:col-span-2">
             <Glass className="p-2 h-[90vh] overflow-y-auto [&::-webkit-scrollbar]:hidden">
-              {/* <div className="flex items-center justify-between px-2 pb-3">
-                <div className="text-lg font-semibold">Daily Timeline</div>
-                <div className="text-xs opacity-80 flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
-                  {new Date().toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </div>
-              </div> */}
-
               <Reorder.Group
                 axis="y"
                 values={tasks}
@@ -322,19 +268,6 @@ export default function App() {
                   </Reorder.Item>
                 ))}
               </Reorder.Group>
-
-              {/* <div className="mt-4 flex items-center justify-between">
-                <button
-                  onClick={addTask}
-                  className="group inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md transition hover:shadow-xl active:scale-95"
-                >
-                  <Plus className="h-5 w-5 transition group-hover:rotate-90" />
-                  Add Task
-                </button>
-                <div className="text-sm opacity-80">
-                  {stats.completed}/{stats.total} completed
-                </div>
-              </div> */}
             </Glass>
           </div>
 
@@ -350,10 +283,10 @@ export default function App() {
                 onClick={() => setShowAnalytics(false)}
               >
                 <motion.div
-                  className="w-[90%] max-w-lg m-4"
+                  className="w-[90%] max-w-4xl m-4"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <AnalyticsPanel pieData={pieData} barData={barData} />
+                  <AnalyticsPanel />
                 </motion.div>
               </motion.div>
             )}
@@ -491,77 +424,6 @@ function TaskCard({
           </motion.div>
         )}
       </AnimatePresence>
-    </Glass>
-  );
-}
-
-function AnalyticsPanel({ pieData, barData }) {
-  const COLORS = [
-    "#60a5fa",
-    "#34d399",
-    "#fb7185",
-    "#a78bfa",
-    "#22d3ee",
-    "#fbbf24",
-  ]; // Tailwind-ish palette
-
-  return (
-    <Glass className="p-4 h-full">
-      <div className="flex items-center justify-between pb-2">
-        <div className="text-lg font-semibold">Analytics</div>
-      </div>
-
-      <div className="space-y-4">
-        <div className="h-56">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={pieData}
-                dataKey="value"
-                nameKey="name"
-                outerRadius={80}
-              >
-                {pieData.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip
-                contentStyle={{
-                  background: "rgba(255,255,255,0.12)",
-                  backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  borderRadius: 12,
-                }}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="h-60">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={barData}>
-              <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.2} />
-              <XAxis dataKey="category" stroke="currentColor" opacity={0.8} />
-              <YAxis stroke="currentColor" opacity={0.8} />
-              <Tooltip
-                contentStyle={{
-                  background: "rgba(255,255,255,0.12)",
-                  backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  borderRadius: 12,
-                }}
-              />
-              <Bar dataKey="Planned" fill="#93c5fd" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="Done" fill="#34d399" radius={[8, 8, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="text-xs opacity-80">
-          Tip: Drag to reorder tasks. Edits persist in your browser. Toggle
-          theme for light/dark glass.
-        </div>
-      </div>
     </Glass>
   );
 }

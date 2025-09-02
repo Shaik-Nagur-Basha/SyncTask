@@ -1,0 +1,1094 @@
+[
+  {
+    "Date": "04-06-2025",
+    "Score": 40,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "05-06-2025",
+    "Score": 50,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "06-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "07-06-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "08-06-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "09-06-2025",
+    "Score": 80,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "10-06-2025",
+    "Score": 40,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "11-06-2025",
+    "Score": 60,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "12-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "13-06-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "14-06-2025",
+    "Score": 35,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "15-06-2025",
+    "Score": 35,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "16-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "17-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "18-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "19-06-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "20-06-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "21-06-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "22-06-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "23-06-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "24-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "25-06-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "26-06-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "27-06-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "28-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "29-06-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "30-06-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "01-07-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "02-07-2025",
+    "Score": 80,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "03-07-2025",
+    "Score": 60,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "04-07-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "05-07-2025",
+    "Score": 60,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "06-07-2025",
+    "Score": 40,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "07-07-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "08-07-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "09-07-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "10-07-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "11-07-2025",
+    "Score": 35,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "12-07-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "13-07-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "14-07-2025",
+    "Score": 40,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "15-07-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "16-07-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "17-07-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "18-07-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "19-07-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "20-07-2025",
+    "Score": 85,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "21-07-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "22-07-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "23-07-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "24-07-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "25-07-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "26-07-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "27-07-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "28-07-2025",
+    "Score": 35,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "29-07-2025",
+    "Score": 50,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "30-07-2025",
+    "Score": 85,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "31-07-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "01-08-2025",
+    "Score": 80,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "02-08-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "03-08-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "04-08-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "05-08-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "06-08-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "07-08-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "08-08-2025",
+    "Score": 40,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "09-08-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "10-08-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "11-08-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "12-08-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "13-08-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "14-08-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "15-08-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "16-08-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "17-08-2025",
+    "Score": 85,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "18-08-2025",
+    "Score": 65,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "19-08-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "20-08-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "21-08-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "22-08-2025",
+    "Score": 50,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "23-08-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "24-08-2025",
+    "Score": 100,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "25-08-2025",
+    "Score": 90,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "26-08-2025",
+    "Score": 70,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "27-08-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "28-08-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 15,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "29-08-2025",
+    "Score": 75,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "30-08-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "31-08-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 15,
+      "Routine": 20,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "01-09-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "02-09-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
+  }
+]
