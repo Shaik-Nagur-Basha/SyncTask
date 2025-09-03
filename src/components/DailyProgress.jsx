@@ -102,7 +102,9 @@ const DailyProgress = memo(({ todayData, currentTime, onClose }) => {
           </div>
           <div className="text-center">
             <div className="text-sm opacity-70">Study</div>
-            <div className="text-2xl font-semibold">{totalStudy}</div>
+            <div className="text-2xl font-semibold">
+              {Math.ceil((totalStudy * 100) / 45)}
+            </div>
           </div>
         </div>
       </Glass>

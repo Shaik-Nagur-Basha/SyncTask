@@ -123,45 +123,26 @@ function AnalyticsPanel() {
 
       case "weekly":
         const weeks = {};
-        let currentDate = new Date();
-        let pastDate = new Date();
-        let futureDate = new Date(currentDate);
+        const totalDays = data.length;
+        const completedWeeks = Math.floor(totalDays / 7);
+        const currentWeekDays = totalDays % 7;
+        const totalWeeks =
+          currentWeekDays > 0 ? completedWeeks + 1 : completedWeeks;
 
-        // Adjust dates based on offset
-        currentDate.setDate(currentDate.getDate() - offset * 28);
-        pastDate.setDate(currentDate.getDate() - 28);
-        futureDate.setDate(currentDate.getDate() + 28);
+        // Calculate which 4 weeks to show
+        const endWeek = totalWeeks - offset;
+        const startWeek = endWeek - 3;
 
         // Check if we have more data in either direction
-        const hasEarlierWeeks = data.some(
-          (item) =>
-            new Date(item.Date.split("-").reverse().join("-")) < pastDate
-        );
-        const hasLaterWeeks = data.some(
-          (item) =>
-            new Date(item.Date.split("-").reverse().join("-")) > currentDate
-        );
+        setHasMorePrevData(startWeek > 1);
+        setHasMoreNextData(offset > 0);
 
-        setHasMorePrevData(hasEarlierWeeks);
-        setHasMoreNextData(hasLaterWeeks && offset > 0);
+        // Group data by weeks
+        data.forEach((day, index) => {
+          const weekNumber = Math.floor(index / 7) + 1;
+          if (weekNumber < startWeek || weekNumber > endWeek) return;
 
-        data.forEach((day) => {
-          const date = new Date(day.Date.split("-").reverse().join("-"));
-          if (date < pastDate) return; // Skip if older than 4 weeks
-
-          // Calculate week number from the end (0 is current week)
-          const timeDiff = currentDate - date;
-          const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-          const weekNum = Math.floor(daysDiff / 7);
-          const weekKey = `Week ${4 - weekNum}`;
-          console.log(
-            currentDate,
-            pastDate,
-            futureDate,
-            daysDiff,
-            weekNum,
-            weekKey
-          );
+          const weekKey = `Week ${weekNumber}`;
 
           if (!weeks[weekKey]) {
             weeks[weekKey] = {
@@ -175,6 +156,7 @@ function AnalyticsPanel() {
               Health: 0,
               Routine: 0,
               Rest: 0,
+              isCurrentWeek: weekNumber === totalWeeks,
             };
           }
 
@@ -185,45 +167,44 @@ function AnalyticsPanel() {
           Object.entries(day.Categories).forEach(([key, value]) => {
             weeks[weekKey][key] += value;
           });
-          console.log(weeks);
         });
 
         processedData = Object.entries(weeks)
           .sort(
             (a, b) =>
               parseInt(a[0].split(" ")[1]) - parseInt(b[0].split(" ")[1])
-          ) // Sort by week number
+          )
           .map(([week, data]) => {
-            // Convert raw scores to percentages based on category maximums
+            // Determine if this is a complete week (7 days) or the current running week
+            const isRunningWeek = data.isCurrentWeek;
+            const daysInWeek = isRunningWeek ? data.count : 7;
+
+            // Calculate percentage based on the actual days in the week
+            const calculatePercentage = (value, maxRange) => {
+              const maxPossibleValue = maxRange * daysInWeek;
+              return Math.round((value / maxPossibleValue) * 100);
+            };
+
             return {
               date: week,
-              Score: Math.round(
-                (data.Score / data.count) * (100 / categoriesMaxRange.Score)
+              Score: calculatePercentage(data.Score, categoriesMaxRange.Score),
+              Study: calculatePercentage(data.Study, categoriesMaxRange.Study),
+              SS1: calculatePercentage(data.SS1, categoriesMaxRange.SS1),
+              SS2: calculatePercentage(data.SS2, categoriesMaxRange.SS2),
+              SS3: calculatePercentage(data.SS3, categoriesMaxRange.SS3),
+              Health: calculatePercentage(
+                data.Health,
+                categoriesMaxRange.Health
               ),
-              Study: Math.round(
-                (data.Study / data.count) * (100 / categoriesMaxRange.Study)
+              Routine: calculatePercentage(
+                data.Routine,
+                categoriesMaxRange.Routine
               ),
-              SS1: Math.round(
-                (data.SS1 / data.count) * (100 / categoriesMaxRange.SS1)
-              ),
-              SS2: Math.round(
-                (data.SS2 / data.count) * (100 / categoriesMaxRange.SS2)
-              ),
-              SS3: Math.round(
-                (data.SS3 / data.count) * (100 / categoriesMaxRange.SS3)
-              ),
-              Health: Math.round(
-                (data.Health / data.count) * (100 / categoriesMaxRange.Health)
-              ),
-              Routine: Math.round(
-                (data.Routine / data.count) * (100 / categoriesMaxRange.Routine)
-              ),
-              Rest: Math.round(
-                (data.Rest / data.count) * (100 / categoriesMaxRange.Rest)
-              ),
-              daysCount: data.count, // Include days count for reference
+              Rest: calculatePercentage(data.Rest, categoriesMaxRange.Rest),
+              daysCount: data.count,
             };
           });
+        // console.log(weeks);
         break;
 
       case "monthly":
@@ -321,6 +302,8 @@ function AnalyticsPanel() {
               daysCount: data.count, // Include days count for reference
             };
           });
+        console.log(months);
+
         break;
     }
 

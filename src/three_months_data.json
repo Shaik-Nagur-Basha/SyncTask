@@ -1,4 +1,52 @@
 [
+    {
+    "Date": "31-05-2025",
+    "Score": 45,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 0,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "01-06-2025",
+    "Score": 50,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 15
+    }
+  },
+  {
+    "Date": "02-06-2025",
+    "Score": 55,
+    "Categories": {
+      "SS1": 0,
+      "SS2": 0,
+      "SS3": 0,
+      "Health": 15,
+      "Routine": 10,
+      "Rest": 10
+    }
+  },
+  {
+    "Date": "03-06-2025",
+    "Score": 30,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 0,
+      "Health": 10,
+      "Routine": 25,
+      "Rest": 15
+    }
+  },
   {
     "Date": "04-06-2025",
     "Score": 40,
