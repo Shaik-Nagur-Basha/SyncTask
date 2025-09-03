@@ -214,17 +214,33 @@ function AnalyticsPanel() {
         const futureMonth = new Date(today);
 
         // Adjust dates based on offset
-        today.setMonth(today.getMonth() - offset * 4);
+        today.setMonth(today.getMonth() - offset);
         monthStart.setMonth(today.getMonth() - 4);
         futureMonth.setMonth(today.getMonth() + 4);
+
+        // console.log("monthStart: " + monthStart);
+        // console.log("monthStart: " + monthStart.getMonth());
+        // console.log("futureMonth: " + futureMonth);
 
         // Check if we have more data in either direction
         const hasEarlierMonths = data.some(
           (item) =>
-            new Date(item.Date.split("-").reverse().join("-")) < monthStart
+            new Date(item.Date.split("-").reverse().join("-")).getMonth() <=
+            monthStart.getMonth()
         );
+
+        // console.log(
+        //   data.some(
+        //     (item) =>
+        //       new Date(item.Date.split("-").reverse().join("-")).getMonth() <=
+        //       monthStart.getMonth()
+        //   )
+        // );
+
         const hasLaterMonths = data.some(
-          (item) => new Date(item.Date.split("-").reverse().join("-")) > today
+          (item) =>
+            new Date(item.Date.split("-").reverse().join("-")).getMonth() >
+            today.getMonth()
         );
 
         setHasMorePrevData(hasEarlierMonths);
@@ -233,7 +249,7 @@ function AnalyticsPanel() {
         // First pass: group data by months and collect only last 4 months
         data.forEach((day) => {
           const date = new Date(day.Date.split("-").reverse().join("-"));
-          if (date < monthStart) return; // Skip if older than 4 months
+          if (date.getMonth() < monthStart.getMonth()) return; // Skip if older than 4 months
 
           // Get month name and calculate month number from current date
           const monthName = date.toLocaleString("en-US", { month: "short" });
@@ -241,6 +257,10 @@ function AnalyticsPanel() {
             (today.getFullYear() - date.getFullYear()) * 12 +
             (today.getMonth() - date.getMonth());
           const monthKey = `${monthName}`;
+
+          // console.log("monthName : " + monthName);
+          // console.log("monthDiff : " + monthDiff);
+          // console.log("monthKey : " + monthKey);
 
           if (!months[monthKey]) {
             months[monthKey] = {
@@ -276,7 +296,10 @@ function AnalyticsPanel() {
         // Process each month's data with percentage calculations
         processedData = Object.entries(months)
           .sort((a, b) => b[1].monthNumber - a[1].monthNumber) // Sort by month number (most recent first)
-          .slice(-4) // Take only last 4 months
+          .slice(
+            offset === 0 ? -4 : -(4 + offset),
+            offset === 0 ? undefined : -offset
+          ) // Take only last 4 months
           .map(([month, data]) => {
             // For current month, adjust calculations based on days passed
             const daysMultiplier =
@@ -302,7 +325,12 @@ function AnalyticsPanel() {
               daysCount: data.count, // Include days count for reference
             };
           });
-        console.log(months);
+        // console.log(
+        //   Object.entries(months).slice(
+        //     offset === 0 ? -4 : -(4 + offset),
+        //     offset === 0 ? undefined : -offset
+        //   )
+        // );
 
         break;
     }

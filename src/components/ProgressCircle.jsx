@@ -19,7 +19,10 @@ export function ProgressCircle({ progress, size = 41 }) {
       width={size}
       height={size}
       viewBox={`0 0 ${size} ${size}`}
-      className="transform -rotate-90"
+      className="transform -rotate-90 relative"
+      style={{
+        filter: `drop-shadow(0 0 ${progress / 20}px ${getColor(progress)})`,
+      }}
     >
       {/* Background circle */}
       <circle
@@ -37,6 +40,7 @@ export function ProgressCircle({ progress, size = 41 }) {
         r={radius}
         strokeWidth={strokeWidth}
         fill="none"
+        className="transition-all duration-300"
         initial={{
           strokeDasharray: `${0} ${circumference}`,
           stroke: getColor(0),
