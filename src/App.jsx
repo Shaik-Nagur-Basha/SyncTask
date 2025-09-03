@@ -4,18 +4,14 @@ import {
   CheckCircle2,
   Circle,
   ChevronDown,
-  // Settings,
-  // Calendar,
   BarChart3,
-  // Plus,
-  // Clock,
   Trash2,
-  // Sun,
-  // Moon,
-  // Search,
 } from "lucide-react";
 import { ProgressCircle } from "./components/ProgressCircle";
 import AnalyticsPanel from "./components/AnalyticsPanel";
+import DailyProgress from "./components/DailyProgress";
+import TimeDisplay from "./components/TimeDisplay";
+import threeMonthsData from "./three_months_data.json";
 
 const DEFAULT_TASKS = [
   {
@@ -116,12 +112,14 @@ export default function App() {
   const [tasks, setTasks] = useLocalState("tasks-v2", DEFAULT_TASKS);
   const [expanded, setExpanded] = useState(null);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showProgress, setShowProgress] = useState(false);
   const [themeDark, setThemeDark] = useLocalState("theme-dark", true);
   const [query, setQuery] = useState("");
   const [date, setDate] = useLocalState(
     "date",
     new Date().toISOString().slice(0, 10)
   );
+  const [currentTime] = useState(new Date());
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", themeDark);
@@ -164,6 +162,19 @@ export default function App() {
     setTasks((prev) =>
       prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
     );
+
+  // Get today's data
+  const todayData = useMemo(() => {
+    const today = currentTime.toLocaleDateString("en-US", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    return threeMonthsData.find((item) => {
+      const [day, month, year] = item.Date.split("-");
+      return `${month}/${day}/${year}` === today;
+    });
+  }, [currentTime]);
 
   return (
     <div className="h-screen w-full transition-colors duration-500 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-[#0b0f15] dark:to-[#0d1117] text-gray-800 dark:text-gray-200 flex flex-col">
@@ -210,24 +221,11 @@ export default function App() {
 
           {/* Right side - Progress and Time */}
           <div className="flex items-center gap-3 py-3 rounded-2xl backdrop-blur-md transition-all">
-            <div className="text-right truncate">
-              <div className="text-[10px] font-medium tracking-tight">
-                {new Date().toLocaleTimeString([], {
-                  hour: "numeric",
-                  minute: "2-digit",
-                  second: "2-digit",
-                  hour12: true,
-                })}
-              </div>
-              <div className="text-[11px] opacity-70">
-                {new Date().toLocaleDateString("en-US", {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </div>
-            </div>
-            <div className="relative">
+            <TimeDisplay />
+            <div
+              className="relative cursor-pointer"
+              onClick={() => setShowProgress(true)}
+            >
               <ProgressCircle
                 progress={(stats.completed / stats.total) * 100}
               />
@@ -291,6 +289,17 @@ export default function App() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Progress Popup */}
+          <AnimatePresence>
+            {showProgress && (
+              <DailyProgress
+                todayData={todayData}
+                currentTime={currentTime}
+                onClose={() => setShowProgress(false)}
+              />
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
@@ -333,11 +342,13 @@ function TaskCard({
         </button>
         <div className="flex-1">
           <div className="flex items-center justify-between gap-3">
-            <input
-              value={task.title}
-              onChange={(e) => onUpdate({ title: e.target.value })}
+            <div
+              // value={task.title}
+              // onChange={(e) => onUpdate({ title: e.target.value })}
               className="bg-transparent text-base font-semibold outline-none w-full dark:text-gray-200 text-gray-800"
-            />
+            >
+              {task.title}
+            </div>
             <span className="text-xs opacity-80 whitespace-nowrap">
               {task.time}
             </span>

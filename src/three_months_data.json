@@ -1090,5 +1090,17 @@
       "Routine": 20,
       "Rest": 10
     }
+  },
+  {
+    "Date": "03-09-2025",
+    "Score": 95,
+    "Categories": {
+      "SS1": 15,
+      "SS2": 15,
+      "SS3": 15,
+      "Health": 10,
+      "Routine": 20,
+      "Rest": 10
+    }
   }
 ]
